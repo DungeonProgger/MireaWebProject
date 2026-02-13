@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Частые вопросы | TravelRussia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="js/layout.js" defer></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#E6F0EE',
+                        'brand-text': '#2C3E50',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-bg text-brand-text antialiased flex flex-col min-h-screen">
+
+    <header id="app-header"></header>
+
+    <main class="flex-grow container mx-auto px-4 md:px-8 py-12">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-serif font-bold mb-4">Часто задаваемые вопросы</h1>
+                <p class="text-gray-600">Мы собрали ответы на самые популярные вопросы о наших путешествиях.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-white rounded-2xl p-4 shadow-sm cursor-pointer border border-transparent hover:border-teal-200 transition">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none">
+                        <span>Как забронировать тур?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-teal-600"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 mt-3 text-sm leading-relaxed animate-fade-in">
+                        Выберите понравившийся маршрут в каталоге, нажмите кнопку "Подробнее" и оставьте заявку. Наш менеджер свяжется с вами в течение 15 минут для уточнения деталей.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-2xl p-4 shadow-sm cursor-pointer border border-transparent hover:border-teal-200 transition">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none">
+                        <span>Что входит в стоимость?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-teal-600"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 mt-3 text-sm leading-relaxed">
+                        В базовую стоимость включено: проживание в отеле, завтраки, трансфер от вокзала/аэропорта, услуги гида и входные билеты в музеи по программе. Обед и ужин оплачиваются отдельно.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-2xl p-4 shadow-sm cursor-pointer border border-transparent hover:border-teal-200 transition">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none">
+                        <span>Можно ли поехать с детьми?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-teal-600"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 mt-3 text-sm leading-relaxed">
+                        Конечно! Большинство наших маршрутов адаптированы для семейного отдыха. Для детей до 7 лет предусмотрены скидки до 50%.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-2xl p-4 shadow-sm cursor-pointer border border-transparent hover:border-teal-200 transition">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none">
+                        <span>Как вернуть деньги при отмене?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-teal-600"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 mt-3 text-sm leading-relaxed">
+                        При отмене за 7 дней до начала тура мы возвращаем 100% стоимости. При отмене менее чем за 3 дня удерживается комиссия 30%.
+                    </div>
+                </details>
+            </div>
+            
+            <div class="text-center mt-12 bg-teal-800/5 p-6 rounded-2xl">
+                <p class="font-serif italic mb-4">Не нашли ответ на свой вопрос?</p>
+                <a href="contacts.html" class="inline-block bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition text-sm">
+                    Написать нам
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="app-footer"></footer>
+
+</body>
+</html>

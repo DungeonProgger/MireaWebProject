@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | TravelRussia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="js/layout.js" defer></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#E6F0EE',
+                        'brand-text': '#2C3E50',
+                        'brand-dark': '#1A202C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-bg text-brand-text antialiased flex flex-col min-h-screen">
+
+    <header id="app-header"></header>
+
+    <main class="flex-grow container mx-auto px-4 md:px-8 py-12">
+        <h1 class="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Свяжитесь с нами</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+                <h2 class="text-xl font-serif font-bold mb-6">Оставьте сообщение</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1">Имя</label>
+                        <input type="text" placeholder="Ваше имя" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1">Email</label>
+                        <input type="email" placeholder="example@mail.com" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1">Тема</label>
+                        <div class="relative">
+                            <select class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 appearance-none focus:outline-none focus:border-teal-500 transition" required>
+                                <option value="" disabled selected>Выберите тему</option>
+                                <option>Предложение</option>
+                                <option>Вопрос по туру</option>
+                                <option>Жалоба</option>
+                                <option>Благодарность</option>
+                            </select>
+                            <div class="absolute right-4 top-3 text-gray-400 pointer-events-none">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1">Сообщение</label>
+                        <textarea rows="4" placeholder="Ваш текст..." class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition" required></textarea>
+                    </div>
+
+                    <div class="flex items-start gap-2 pt-2">
+                        <input type="checkbox" id="consent" class="mt-1 accent-teal-600" required>
+                        <label for="consent" class="text-xs text-gray-500 cursor-pointer">
+                            Я соглашаюсь на обработку моих персональных данных
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition mt-4">
+                        Отправить
+                    </button>
+                </form>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-teal-800/5 p-8 rounded-2xl border border-teal-800/10 h-full">
+                    <h2 class="text-xl font-serif font-bold mb-6">Наши контакты</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-teal-700 shadow-sm shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm">Адрес офиса</h3>
+                                <p class="text-sm text-gray-600">г. Москва, ул. Примерная, д. 123, офис 45</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-teal-700 shadow-sm shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm">Телефон</h3>
+                                <p class="text-sm text-gray-600">+7 (999) 123-45-67</p>
+                                <p class="text-xs text-gray-400">Пн-Пт: 10:00 - 19:00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-teal-700 shadow-sm shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm">Email</h3>
+                                <p class="text-sm text-gray-600">info@travelrussia.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="app-footer"></footer>
+
+</body>
+</html>
