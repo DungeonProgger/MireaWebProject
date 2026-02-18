@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="js/layout.js" defer></script>
+    <script src="js/validation.js" defer></script>
+    <script src="js/consoleLogger.js" defer></script>
     
     <script>
         tailwind.config = {
@@ -29,6 +31,9 @@
             }
         }
     </script>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body class="bg-brand-bg text-brand-text antialiased flex flex-col min-h-screen">
 
@@ -41,26 +46,31 @@
             
             <div class="bg-white p-8 rounded-2xl shadow-sm">
                 <h2 class="text-xl font-serif font-bold mb-6">Оставьте сообщение</h2>
-                <form class="space-y-4">
+                <form id="feedbackForm" class="space-y-4" novalidate>
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">Имя</label>
-                        <input type="text" placeholder="Ваше имя" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition" required>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">Email</label>
-                        <input type="email" placeholder="example@mail.com" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition" required>
+                        <label class="block text-xs font-bold text-gray-500 mb-1" for="fullname">ФИО</label>
+                        <input type="text" id="fullname" placeholder="Иванов Иван Иванович" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">Тема</label>
+                        <label class="block text-xs font-bold text-gray-500 mb-1" for="phone">Телефон</label>
+                        <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1" for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@mail.com" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1" for="topic">Тема</label>
                         <div class="relative">
-                            <select class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 appearance-none focus:outline-none focus:border-teal-500 transition" required>
+                            <select id="topic" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 appearance-none focus:outline-none focus:border-teal-500 transition">
                                 <option value="" disabled selected>Выберите тему</option>
-                                <option>Предложение</option>
-                                <option>Вопрос по туру</option>
-                                <option>Жалоба</option>
-                                <option>Благодарность</option>
+                                <option value="Предложение">Предложение</option>
+                                <option value="Вопрос по туру">Вопрос по туру</option>
+                                <option value="Жалоба">Жалоба</option>
+                                <option value="Благодарность">Благодарность</option>
                             </select>
                             <div class="absolute right-4 top-3 text-gray-400 pointer-events-none">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -69,13 +79,13 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">Сообщение</label>
-                        <textarea rows="4" placeholder="Ваш текст..." class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition" required></textarea>
+                        <label class="block text-xs font-bold text-gray-500 mb-1" for="message">Сообщение</label>
+                        <textarea id="message" rows="4" placeholder="Ваш текст..." class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-teal-500 transition"></textarea>
                     </div>
 
                     <div class="flex items-start gap-2 pt-2">
-                        <input type="checkbox" id="consent" class="mt-1 accent-teal-600" required>
-                        <label for="consent" class="text-xs text-gray-500 cursor-pointer">
+                        <input type="checkbox" id="agreement" class="mt-1 accent-teal-600">
+                        <label for="agreement" class="text-xs text-gray-500 cursor-pointer">
                             Я соглашаюсь на обработку моих персональных данных
                         </label>
                     </div>
